@@ -14033,6 +14033,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.06
       objectReference: {fileID: 0}
+    - target: {fileID: 8732487946711255988, guid: b6ebf1beebcf200448410bfdbfcae013,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8732487946711255989, guid: b6ebf1beebcf200448410bfdbfcae013,
         type: 3}
       propertyPath: directions.Array.size
@@ -14132,11 +14137,6 @@ PrefabInstance:
         type: 3}
       propertyPath: waitTime
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8732487946711255988, guid: b6ebf1beebcf200448410bfdbfcae013,
-        type: 3}
-      propertyPath: speed
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ebf1beebcf200448410bfdbfcae013, type: 3}
@@ -16507,6 +16507,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1.87
       objectReference: {fileID: 0}
+    - target: {fileID: 8732487946711255988, guid: b6ebf1beebcf200448410bfdbfcae013,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8732487946711255989, guid: b6ebf1beebcf200448410bfdbfcae013,
         type: 3}
       propertyPath: directions.Array.size
@@ -16606,11 +16611,6 @@ PrefabInstance:
         type: 3}
       propertyPath: waitTime
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8732487946711255988, guid: b6ebf1beebcf200448410bfdbfcae013,
-        type: 3}
-      propertyPath: speed
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ebf1beebcf200448410bfdbfcae013, type: 3}
@@ -19005,6 +19005,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.36
       objectReference: {fileID: 0}
+    - target: {fileID: 8732487946711255988, guid: b6ebf1beebcf200448410bfdbfcae013,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8732487946711255989, guid: b6ebf1beebcf200448410bfdbfcae013,
         type: 3}
       propertyPath: directions.Array.size
@@ -19104,11 +19109,6 @@ PrefabInstance:
         type: 3}
       propertyPath: waitTime
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8732487946711255988, guid: b6ebf1beebcf200448410bfdbfcae013,
-        type: 3}
-      propertyPath: speed
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ebf1beebcf200448410bfdbfcae013, type: 3}
@@ -21642,7 +21642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSFX:
     coinPickup: {fileID: 8300000, guid: 79210c803a37e194db71b911f0dabb55, type: 3}
-    fail: {fileID: 8300000, guid: 5c8083684426cf14dae3bffe8b8a5410, type: 3}
+    fail: {fileID: 8300000, guid: 3262565de1375954086de7f867cae221, type: 3}
     levelComplete: {fileID: 8300000, guid: e04f0c17afa1467458444d4d6177c45e, type: 3}
 --- !u!114 &2080809956
 MonoBehaviour:
