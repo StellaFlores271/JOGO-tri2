@@ -22,4 +22,5 @@ public class BirdCtrl : MonoBehaviour
         Destroy(gameObject);
         Level02Manager.instance.ShowGameOverPanel();
     }
+
 }

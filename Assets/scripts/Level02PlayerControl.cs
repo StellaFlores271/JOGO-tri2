@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Level02PlayerControl : MonoBehaviour
 {   
+    [SerializeField]
+    public FloatingJoystick joystick;
 
        void OnTriggerEnter2D(Collider2D other){
            if (other.gameObject.CompareTag("Coin"))
@@ -39,6 +41,7 @@ public class Level02PlayerControl : MonoBehaviour
                AudioManager.instance.PlaySoundFail(gameObject);
                SFXManager.instance.ShowDieParticles(gameObject);
                Destroy(gameObject);
+               joystick.gameObject.SetActive(false);
                Level02Manager.instance.ShowGameOverPanel();
            }
 }

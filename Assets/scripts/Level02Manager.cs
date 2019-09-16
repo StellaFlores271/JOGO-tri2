@@ -11,6 +11,9 @@ public class Level02Manager : MonoBehaviour
     [SerializeField]
     private Transform Tape = null;
 
+    [SerializeField]
+    public GameObject joystick;
+
     public Level02UIComponents uicomponents;
     Level02SceneData sceneData = new Level02SceneData();
     void Awake()
@@ -25,6 +28,11 @@ public class Level02Manager : MonoBehaviour
     {
         
     }
+
+    public void DestroyJoystick() {
+        Destroy(joystick);
+    }
+
 
     // Update is called once per frame
     void Update()
