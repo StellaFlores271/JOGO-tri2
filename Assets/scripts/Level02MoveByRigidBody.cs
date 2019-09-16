@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Level02MoveByRigidBody : MonoBehaviour
 {
+    [SerializeField]
+    public FloatingJoystick joystick;
    [SerializeField]
     private float SpeedFactor = 10f;
-    [SerializeField]
+
     private Rigidbody2D Rb;  
     void Start()
     {
@@ -16,9 +18,11 @@ public class Level02MoveByRigidBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        //float horizontalInput = Input.GetAxisRaw("Horizontal");
+        //float verticalInput = Input.GetAxisRaw("Vertical");
+        float horizontalInput = joystick.Horizontal;
+        float verticalInput = joystick.Vertical;
 
-        Rb.velocity = new Vector3(horizontalInput, verticalInput, 0f) * SpeedFactor; 
+        Rb.velocity = new Vector3(horizontalInput, verticalInput, 0f).normalized * SpeedFactor; 
     }
 }

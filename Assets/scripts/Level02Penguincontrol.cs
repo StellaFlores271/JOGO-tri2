@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Level02Penguincontrol : MonoBehaviour
 {   
-
        void OnTriggerEnter2D(Collider2D other){
            if (other.gameObject.CompareTag("Coin"))
            {
@@ -24,6 +23,9 @@ public class Level02Penguincontrol : MonoBehaviour
            else if(other.gameObject.layer == LayerMask.NameToLayer("forbidden")){
                KillPlayer();
            }
+           else  if(other.gameObject.layer == LayerMask.NameToLayer("enemies")){
+               KillPlayer();
+           } 
            
        }
 
@@ -35,7 +37,9 @@ public class Level02Penguincontrol : MonoBehaviour
                StopMusicAndTape();
                AudioManager.instance.PlaySoundFail(gameObject);
                SFXManager.instance.ShowDieParticles(gameObject);
+               Level02Manager.instance.DestroyJoystick();
                Destroy(gameObject);
+                
                Level02Manager.instance.ShowGameOverPanel();
            }
 }
