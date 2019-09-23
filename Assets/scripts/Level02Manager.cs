@@ -43,8 +43,15 @@ public class Level02Manager : MonoBehaviour
     public void IncrementCoinCount(){
         sceneData.coinCount++;
     }
+    public void DecrementLifeCount(){
+        sceneData.lifeCount--;
+    }    
+    public int GetLifeCount() {
+        return sceneData.lifeCount;
+    }
     void DisplayHudData(){
         uicomponents.hud.txtCoinCount.text = "x " + sceneData.coinCount;
+        uicomponents.hud.txtLifeCount.text = "x " + sceneData.lifeCount;
     }
     public void SetTapeSpeed(float value){
         TapeSpeed = new Vector3(value, TapeSpeed.y, TapeSpeed.z);
