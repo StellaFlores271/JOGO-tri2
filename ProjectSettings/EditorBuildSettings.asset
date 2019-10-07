@@ -20,10 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level03.unity
     guid: 008420cdd3b659b419f29b9d85e6cb6c
+  - enabled: 1
+    path: "Assets/Scenes/anima\xE7\xE3o.unity"
+    guid: 207929fcbf956b04894ff955c7c9ada9
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/9f8cb38cbead7524f9b81cfd8ed3790d
+    path: 
     guid: 9f8cb38cbead7524f9b81cfd8ed3790d
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/a1ca8d2dd1e21314eb360eb982e768e8
+    path: 
     guid: a1ca8d2dd1e21314eb360eb982e768e8
   m_configObjects: {}
