@@ -15,10 +15,12 @@ public class Level02Penguincontrol : MonoBehaviour
            else if (other.gameObject.CompareTag("Gift"))
            {
                StopMusicAndTape();
+               Level02Manager.instance.DestroyJoystick();
                Destroy(other.gameObject);
                AudioManager.instance.PlaySoundLevelComplete(gameObject);
                Destroy(gameObject);
                Level02Manager.instance.ShowLevelComplete();
+               
            }
            else if(other.gameObject.layer == LayerMask.NameToLayer("forbidden")){
                KillPlayer();

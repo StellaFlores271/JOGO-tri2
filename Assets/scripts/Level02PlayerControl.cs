@@ -19,6 +19,7 @@ public class Level02PlayerControl : MonoBehaviour
            {
                StopMusicAndTape();
                Destroy(other.gameObject);
+               Level02Manager.instance.DestroyJoystick();
                AudioManager.instance.PlaySoundLevelComplete(gameObject);
                Destroy(gameObject);
                Level02Manager.instance.ShowLevelComplete();
