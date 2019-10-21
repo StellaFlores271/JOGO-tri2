@@ -43,6 +43,9 @@ public class Level02Manager : MonoBehaviour
     public void IncrementCoinCount(){
         sceneData.coinCount++;
     }
+    public void IncrementLifeCount(){
+        sceneData.lifeCount++;
+    }
     public void DecrementLifeCount(){
         sceneData.lifeCount--;
     }    

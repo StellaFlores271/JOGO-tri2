@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level02Penguincontrol : MonoBehaviour
 {   
+       bool wait = false;
        void OnTriggerEnter2D(Collider2D other){
            if (other.gameObject.CompareTag("Coin"))
            {
@@ -11,6 +12,13 @@ public class Level02Penguincontrol : MonoBehaviour
                AudioManager.instance.PlaySoundCoinPickup(other.gameObject);
                Destroy(other.gameObject);
                Level02Manager.instance.IncrementCoinCount();
+           }
+            else if (other.gameObject.CompareTag("Life"))
+           {
+               SFXManager.instance.ShowCoinParticles(other.gameObject);
+               AudioManager.instance.PlaySoundLifePickup(other.gameObject);
+               Destroy(other.gameObject);
+               Level02Manager.instance.IncrementLifeCount();
            }
            else if (other.gameObject.CompareTag("Gift"))
            {
@@ -25,13 +33,13 @@ public class Level02Penguincontrol : MonoBehaviour
            else if(other.gameObject.layer == LayerMask.NameToLayer("forbidden")){
                KillPlayer();
            }
-           else  if(other.gameObject.layer == LayerMask.NameToLayer("enemies")){
-               KillPlayer();
-           } 
+           else if(other.gameObject.layer == LayerMask.NameToLayer("enemies")){
+            HurtPlayer();
+           }
            
-       }
+        }
 
-       void StopMusicAndTape(){
+        void StopMusicAndTape(){
                Camera.main.GetComponentInChildren<AudioSource>().mute = true;
                Level02Manager.instance.SetTapeSpeed(0);
            }
@@ -44,4 +52,31 @@ public class Level02Penguincontrol : MonoBehaviour
                 
                Level02Manager.instance.ShowGameOverPanel();
            }
+           void HurtPlayer() {
+            if (!wait) {
+            Level02Manager.instance.DecrementLifeCount();
+            ChangeAlpha(0.5f);
+            if (Level02Manager.instance.GetLifeCount() == 0) {
+                KillPlayer();
+            }
+            else {                
+                wait = true;
+                StartCoroutine(DisableWait(2.0f));
+            }
+            }
+            }       
+
+            private IEnumerator DisableWait(float waitTime)
+            {
+                yield return new WaitForSeconds(waitTime);
+                ChangeAlpha(1f);        
+                wait = false;
+            }
+
+            private void ChangeAlpha(float alpha) {
+                Debug.Log("Dec " + alpha);
+                Color tmp = GetComponent<SpriteRenderer>().color;
+                tmp.a = alpha;
+                GetComponent<SpriteRenderer>().color = tmp;
+            }
 }

@@ -16,6 +16,13 @@ public class PlayerControl_oo1 : MonoBehaviour
             Destroy(other.gameObject);
             Level02Manager.instance.IncrementCoinCount();
         }
+        else if (other.gameObject.CompareTag("Life"))
+        {
+            SFXManager.instance.ShowCoinParticles(other.gameObject);
+            AudioManager.instance.PlaySoundLifePickup(other.gameObject);
+            Destroy(other.gameObject);
+            Level02Manager.instance.IncrementLifeCount();
+        }
         else if (other.gameObject.CompareTag("Gift"))
         {
             StopMusicAndTape();

@@ -22,5 +22,8 @@ public class AudioManager : MonoBehaviour
      public void PlaySoundLevelComplete(GameObject obj){
         AudioSource.PlayClipAtPoint(audioSFX.levelComplete, obj.transform.position);
     }
+    public void PlaySoundLifePickup(GameObject obj){
+        AudioSource.PlayClipAtPoint(audioSFX.lifePickup, obj.transform.position);
+    }
 
 }

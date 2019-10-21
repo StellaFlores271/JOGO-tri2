@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Forbidden
   - Gift
+  - Life
   layers:
   - Default
   - TransparentFX
