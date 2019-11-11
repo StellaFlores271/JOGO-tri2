@@ -22,14 +22,12 @@ public Transform refPoint;
     // Update is called once per frame
     void Update()
     {
-        if (!encostado) {
-            Vector3 initialPosition = transform.position;
-            Vector3 finalPosition = new Vector3(refPoint.position.x, initialPosition.y, initialPosition.z);
-            transform.position = Vector3.Lerp(initialPosition, finalPosition, lerpRate * Time.deltaTime);
-        }
+        Vector3 initialPosition = transform.position;
+        Vector3 finalPosition = new Vector3(refPoint.position.x, initialPosition.y, initialPosition.z);
+        transform.position = Vector3.Lerp(initialPosition, finalPosition, lerpRate * Time.deltaTime);
 
-        if (noChao) {
-            if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")) {
+            if (noChao) 
             {
                 Impulse(force);
             }
