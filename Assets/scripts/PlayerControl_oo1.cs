@@ -75,7 +75,6 @@ public class PlayerControl_oo1 : MonoBehaviour
     }
 
     private void ChangeAlpha(float alpha) {
-        Debug.Log("Dec " + alpha);
         Color tmp = GetComponent<SpriteRenderer>().color;
         tmp.a = alpha;
         GetComponent<SpriteRenderer>().color = tmp;
